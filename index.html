@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main-block{
+            width: 560px;
+            height: 560px;
+            margin: 30px auto;
+            border: 1px solid red;
+        }
+        .block{
+            width: 70px;
+            height: 70px;
+            float: left;
+        }
+        .black{
+            background: #000;
+        }
+        .white{
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-block"></div>
+
+<script type="text/javascript">
+    var drawChess = function() {
+        var mainBlock = document.querySelector('.main-block');
+        var block;
+        var flag = true;
+
+        for(var i = 0; i < 8; i++){
+            for(var j = 0; j < 8; j++){
+                if(j==0) flag = !flag;
+                block = document.createElement('div');
+
+                if(flag) block.className = 'block black';
+                else block.className = 'block white';
+
+                mainBlock.appendChild(block);
+                flag=!flag;
+            }
+        }
+    }
+
+    drawChess();
+
+</script>
+</body>
+</html>
